@@ -1,5 +1,7 @@
 package com.irctc.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,9 +35,11 @@ public class TicketController {
 		return new ResponseEntity<> (ticket, HttpStatus.OK);
 		
 	}
-
-	
-	
+	@GetMapping(value="/ticket",produces="application/json")
+	public ResponseEntity<List<Ticket>> getTicket(){
+		List<Ticket> allTickets=ticketService.getAllTickets();
+		return new ResponseEntity<> (allTickets, HttpStatus.OK);
+	}
 	
 	
 }

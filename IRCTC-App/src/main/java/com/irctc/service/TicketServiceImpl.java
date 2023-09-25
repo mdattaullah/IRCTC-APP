@@ -1,5 +1,6 @@
 package com.irctc.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
@@ -37,5 +38,11 @@ public class TicketServiceImpl implements TicketService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<Ticket> getAllTickets() {
+		return ticketRepo.findAll();
+	}
+	
 
 }
